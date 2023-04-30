@@ -76,8 +76,8 @@ void loop()
     if (lastTemperature[i] != temperature && temperature != -127.00 && temperature != 85.00) { // Only send data if temperature has changed and no error         
       send(msg.setSensor(i).set(temperature,1)); // Send in the new temperature
       lastTemperature[i]=temperature; // Save new temperatures for next compare
-      //Serial.println("Temp = " + (String)temperature);
-      Serial.println ("{ 'temp1': {'garage': ' + temperature + '}}") ;
+      Serial.println("Temp = " + (String)temperature);
+      //Serial.println ({ 'temp1': {'garage': ' + temperature + '}}) ;
     }
    // Serial.println("Temp = " + (String)temperature);
   }
